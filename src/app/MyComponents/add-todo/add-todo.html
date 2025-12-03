@@ -1,0 +1,28 @@
+<h4 class="text-center text-3xl font-semibold tracking-wide">Add your todo</h4>
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Todo Title</label>
+    <input
+      type="text"
+      class="form-control border block w-180 p-2 rounded"
+      id="title"
+      [(ngModel)]="title"
+      name="title"
+      placeholder="Enter todo title"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="desc" class="form-label">Todo Description:</label>
+    <input
+      type="text"
+      class="form-control border p-2 rounded block w-full"
+      id="desc"
+      [(ngModel)]="desc"
+      name="desc"
+      placeholder="Enter todo description"
+      required
+    />
+  </div>
+  <button type="submit" class="py-1 px-3 bg-blue-500 rounded text-white">Add Todo</button>
+</form>

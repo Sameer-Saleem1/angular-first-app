@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center justify-center">
+  <p class="my-4 font-bold tracking-wide text-2xl uppercase">this is an angular todo app!</p>
+
+  <app-add-todo (todoAdd)="addTodo($event)"> </app-add-todo>
+  <h1 class="text-3xl font-semibold mt-5">Your Todos</h1>
+  <div *ngIf="todos.length === 0; else elseBlock" class="mt-3 text-xl font-semibold">
+    No Todo To display
+  </div>
+  <ng-template #elseBlock>
+    <ul *ngFor="let todo of todos">
+      <app-todo-items [todoItem]="todo" (todoDelete)="deleteTodo($event)"></app-todo-items>
+      <!-- <li>{{ todo.id }} - {{ todo.title }} - {{ todo.desc }}</li> -->
+    </ul>
+  </ng-template>
+</div>
